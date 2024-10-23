@@ -1,11 +1,12 @@
 #include "main.h"
 /**
- * function - print alphabet
+ * print_alphabet - writes the alphabet output
  *
  * Description: Print alphabet with created functions
  * Return: Always 0 if Success.
  */
-void print_alphabet(void) 
+
+void print_alphabet(void)
 {
 	char i = 'a';
 
@@ -15,5 +16,4 @@ void print_alphabet(void)
 	}
 
 	_putchar('\n');
-return;
 }
