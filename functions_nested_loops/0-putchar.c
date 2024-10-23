@@ -1,8 +1,11 @@
 #include <unistd.h>
 #include "main.h"
-/*
-* main - entry point
-*/
+/**
+ * main - Entry Point
+ *
+ * Description: Print _putchar
+ * Return: Always 0 if Success.
+ */
 int main(void)
 {
 	_putchar('_');
