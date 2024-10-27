@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include "main.h"
-/*
-* int main(void): is the main function
-*
-* Return: on success 0
-* On error,1 is returned
-*/
+/**
+ * main - is the main function
+ *
+ * Return: on success 0
+ * On error,1 is returned
+ */
 
 int main(void)
 {
