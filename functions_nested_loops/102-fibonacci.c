@@ -10,20 +10,21 @@
 int main(void)
 {
 	int i;
-	int first = 1;
-	int second = 2;
-	int next = 0;
+	unsigned long first = 1;
+	unsigned long second = 2;
+	unsigned long next = 0;
 	int limit = 50;
 
-	printf("%d, %d, ", first, second);
-
+	printf("%lu, %lu, ", first, second);
 	for (i = 3; i <= limit; i++)
 	{
 		next = first + second;
-		printf("%d, ", next);
+		printf(", %lu", next);
 		first = second;
 		second = next;
 	}
+
 	printf("\n");
+
 	return (0);
 }
