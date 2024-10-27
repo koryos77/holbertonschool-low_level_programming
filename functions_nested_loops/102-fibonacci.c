@@ -11,17 +11,21 @@ int main(void)
 {
 	int i;
 	unsigned long first = 1;
-	unsigned long second = 2;
+	unsigned long sec = 2;
 	unsigned long next = 0;
 	int limit = 50;
 
-	printf("%lu, %lu, ", first, second);
+	printf("%lu", first);
+
+	if (limit >= 2)
+	printf(", %lu", sec);
+
 	for (i = 3; i <= limit; i++)
 	{
-		next = first + second;
+		next = first + sec;
 		printf(", %lu", next);
-		first = second;
-		second = next;
+		first = sec;
+		sec = next;
 	}
 
 	printf("\n");
