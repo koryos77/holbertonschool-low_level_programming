@@ -22,6 +22,12 @@ int main(void)
 	for (i = 3; i <= limit; i++)
 	{
 		next = first + sec;
+
+		if (next < first)
+		{
+			break;
+		}
+
 		printf(", %lu", next);
 		first = sec;
 		sec = next;
