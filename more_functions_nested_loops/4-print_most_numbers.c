@@ -9,11 +9,11 @@
 void print_most_numbers(void)
 {
 	{
-	char array[] = {'0', '1', '3', '5', '6', '7', '8', '9'};
+	char array[] = {'0', '1', '3', '5', '6', '7', '8', '9', '\0'};
 
 	int i;
 
-	for (i = 0; i <= 9; i++)
+	for (i = 0; i < 10; i++)
 	{
 		_putchar(array[i]);
 	}
