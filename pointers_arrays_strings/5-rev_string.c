@@ -10,7 +10,7 @@ void rev_string(char *s)
 {
 	int length = 0;
 	int i;
-	char reversed[10];/*create an array for the reversed string*/
+	char reversed[100];/*create an array for the reversed string*/
 
 	while (s[length] != '\0')/*find the length of the string*/
 	{
