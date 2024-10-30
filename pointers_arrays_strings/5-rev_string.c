@@ -10,20 +10,20 @@ void rev_string(char *s)
 {
 	int length = 0;
 	int i;
-	char reversed[100];/*create an array for the reversed string*/
+	char reversed[446];
 
-	while (s[length] != '\0')/*find the length of the string*/
+	while (s[length] != '\0')
 	{
 		length++;
 	}
 
-	for (i = 0; i < length; i++)/*fill the array*/
+	for (i = 0; i < length; i++)
 	{
 		reversed[i] = s[length - 1 - i];
 	}
 	reversed[length] = '\0';
 
-	for (i = 0; i <= length; i++)/*copy the reversed string in the array*/
+	for (i = 0; i <= length; i++)
 	{
 		s[i] = reversed[i];
 	}
