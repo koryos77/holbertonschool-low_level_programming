@@ -3,9 +3,8 @@
  * _strncat - a pointer to concatenates two int
  * @dest: destination string
  * @src: source string
- * @n: int n
- * Return: on Sucess 1
- * On error, 0 is returnd
+ * @n: int to add bytes
+ * Return: dest
  */
 
 char *_strncat(char *dest, char *src, int n)
