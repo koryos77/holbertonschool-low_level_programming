@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * print_array - a pointer to print array
- * @a: pointer
+ * @a: pointer to the array
  * @n: number of element to print
  * Return: on Sucess 1
  * On error, 0 is returned
@@ -16,10 +16,10 @@ void print_array(int *a, int n)
 	{
 		printf("%d", a[i]);
 
-	}
-	if (i < n - 1)
-	{
-		printf("%d, ", n);
+		if (i < n - 1)
+		{
+			printf(", ");
+		}
 	}
 	printf("\n");
 }
