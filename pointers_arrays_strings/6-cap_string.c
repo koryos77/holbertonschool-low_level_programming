@@ -8,28 +8,33 @@
 
 char *cap_string(char *str)
 {
-		char *first = str;
+	int capNext = 1;
+	char *ptr = str;
+	char spec[] = " \t\n,;.!?\"(){}";
+	int i;
 
-		if (*first >= 'a' && *first <= 'z')
-		{
-			*first -= 32;
-		}
 
-		while (*first)
+	while (*ptr)
+	{
+		for (i = 0; spec[i]; i++)
 		{
-			if (*first == ' ')
+			if (*ptr == spec[i])
 			{
-				first++;
-
-				if (*first >= 'a' && *first <= 'z')
-				{
-					*first -= 32;
-				}
+				capNext = 1;
+				break;
+			}
+		}
+			if (capNext && *ptr >= 'a' && *ptr <= 'z')
+			{
+				*ptr -= 32;
+				capNext = 0;
 			}
 			else
 			{
-				first++;
+				capNext = 0;
 			}
-		}
+			ptr++;
+
+	}
 	return (str);
 }
