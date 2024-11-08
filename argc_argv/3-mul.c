@@ -10,9 +10,9 @@
 
 int main(int argc, char *argv[])
 {
-	int num1;
-	int num2;
-	int product;
+	unsigned int num1;
+	unsigned int num2;
+	unsigned int product;
 
 	if (argc != 3)
 	{
