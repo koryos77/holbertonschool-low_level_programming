@@ -19,6 +19,11 @@ int main(int argc, char *argv[])
 		printf("0\n");
 		return (0);
 	}
+	if (argc < 0 || argc > 9)
+	{
+		printf("Error\n");
+		return (1);
+	}
 	for (i = 0; i < argc; i++)
 	{
 		for (j = 0; argv[i][j] != '\0'; j++)
