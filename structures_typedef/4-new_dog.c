@@ -1,6 +1,48 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "dog.h"
+
+/**
+ * _strlen - a pointer
+ * @s: string
+ * Return: on Sucess 1
+ * On error, 0 is returned
+ */
+
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (*s != '\0')
+	{
+	len++;
+	s++;
+	}
+	return (len);
+}
+
+/**
+ * _strcpy- a pointer copy
+ * @dest: destination
+ * @src: source
+ * Return: on Sucess 1
+ * On error, 0 is returned
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	char *Return = dest;
+
+	while (*src != '\0')
+	{
+		*dest = *src;
+		dest++;
+		src++;
+	}
+	*dest = '\0';
+	return (Return);
+}
+
 /**
  * new_dog - function that print poppy's infos
  * @name: pointer to the name
@@ -10,46 +52,39 @@
  * Return: NULL if the function fails
  */
 
+
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int i = 0;
-	int j = 0;
-	dog_t *d;
+	dog_t *dog;
+	int name_len = 0;
+	int owner_len = 0;
 
-	d = malloc(sizeof(dog_t));
-
-	if (d == NULL)
-	return (NULL);
-
-	for (i = 0; name[i] != '\0'; i++)
+	if (name != NULL && owner != NULL)
 	{
-		d->name = malloc(i + 1);
-		if (d->name == NULL)
+		name_len = _strlen(name) + 1;
+		owner_len = _strlen(owner) + 1;
+
+		dog = malloc(sizeof(dog_t));
+
+		if (dog == NULL)
+		return (NULL);
+
+		dog->name = malloc(sizeof(char) * name_len);
+		if (dog->name == NULL)
 		{
-			free(d);
+			free(dog);
 			return (NULL);
 		}
-	}
-	for (j = 0; j < i; j++)
-	{
-		d->name[j] = name[j];
-	}
-	d->name[i] = '\0';
-	for (i = 0; owner[i] != '\0'; i++)
-	{
-		d->owner = malloc(i + 1);
-		if (d->owner == NULL)
+		dog->owner = malloc(sizeof(char) * owner_len);
+		if (dog->owner == NULL)
 		{
-			free(d->name);
-			free(d);
+			free(dog);
 			return (NULL);
 		}
+		dog->age = age;
+		dog->name = _strcpy(dog->name, name);
+		dog->owner = _strcpy(dog->owner, owner);
 	}
-	for (j = 0; j < i; j++)
-	{
-		d->owner[j] = owner[j];
-	}
-	d->owner[i] = '\0';
-	d->age = age;
-	return (d);
+	return (dog);
 }
