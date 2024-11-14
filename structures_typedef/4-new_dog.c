@@ -60,6 +60,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 	int name_len = 0;
 	int owner_len = 0;
 
+	if (name == NULL || owner == NULL)
+	return (NULL);
+
 	if (name != NULL && owner != NULL)
 	{
 		name_len = _strlen(name) + 1;
