@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "dog.h"
-
 /**
- * _strlen - a pointer
+ * _strlen - to know the length
  * @s: string
  * Return: on Sucess 1
  * On error, 0 is returned
@@ -20,9 +19,8 @@ int _strlen(char *s)
 	}
 	return (len);
 }
-
 /**
- * _strcpy- a pointer copy
+ * _strcpy- to copy
  * @dest: destination
  * @src: source
  * Return: on Sucess 1
@@ -42,7 +40,6 @@ char *_strcpy(char *dest, char *src)
 	*dest = '\0';
 	return (Return);
 }
-
 /**
  * new_dog - function that print poppy's infos
  * @name: pointer to the name
