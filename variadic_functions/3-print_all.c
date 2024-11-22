@@ -57,34 +57,37 @@ void print_str(va_list args)
 
 void print_all(const char * const format, ...)
 {
-	fmt f[] = {
-		{'c', print_char},
-		{'i', print_int},
-		{'f', print_float},
-		{'s', print_str},
-		{'\0', NULL}};
-
 	va_list args;
 	int i = 0;
-	int j;
 	char *separator = "";
+	char *str;
 
 	va_start(args, format);
 
-	while (format[i] != '\0')
+	while (format && format[i])
 	{
-		j = 0;
-		while (f[j].str)
+		switch (format[i])
 		{
-			if (f[j].str == format[i])
-			{
-				printf("%s", separator);
-				f[j].print(args);
-				separator = ", ";
+			case 'c':
+				printf("%s%c", separator, va_arg(args, int));
 				break;
-			}
-			j++;
+			case 'i':
+				printf("%s%d", separator, va_arg(args, int));
+				break;
+			case 'f':
+				printf("%s%f", separator, va_arg(args, double));
+				break;
+			case 's':
+				str = va_arg(args, char *);
+				if (!str)
+					str = "(nil)";
+				printf("%s%s", separator, str);
+				break;
+			default:
+				i++;
+				continue;
 		}
+		separator = ", ";
 		i++;
 	}
 	printf("\n");
