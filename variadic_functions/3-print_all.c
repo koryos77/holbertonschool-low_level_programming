@@ -64,10 +64,13 @@ void print_all(const char * const format, ...)
 		{'s', print_str},
 		{'\0', NULL}};
 
+	va_list args;
 	int i = 0;
 	int j;
 	char *separator = "";
-	va_list args;
+
+	if (!format)
+	return;
 
 	va_start(args, format);
 
