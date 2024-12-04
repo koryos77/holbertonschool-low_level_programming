@@ -1,0 +1,1 @@
+Project for Holberton School about bit manipulation
