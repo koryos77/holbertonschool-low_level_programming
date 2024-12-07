@@ -45,12 +45,14 @@ int main(int argc, char *argv[])
 	if (fd_to == -1)
 	exit_error(99, "Error: Can't write to %s\n", argv[2]);
 
-	while ((Read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
+	while (1)
 	{
+		Read = read(fd_from, buffer, BUFFER_SIZE);
 		if (Read == -1)
 		exit_error(98, "Error: Can't read from file %s\n", argv[1]);
 		if (Read == 0)
 		break;
+
 		Write = write(fd_to, buffer, Read);
 		if (Write == -1 || Write != Read)
 		exit_error(99, "Error: Can't write to %s\n", argv[2]);
