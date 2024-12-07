@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 	while ((Read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
 	{
 		Write = write(fd_to, buffer, Read);
-		if (Write == 1 || Write != Read)
+		if (Write == -1 || Write != Read)
 		exit_error(99, "Error: Can't write to %s\n", argv[2]);
 	}
 	if (Read == -1)
